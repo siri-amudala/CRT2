@@ -17,4 +17,17 @@ target=7
 nums=[2,3,1,2,4,3]
 print(minSubArrayLen(target,nums))
 
+#leetcode question 713
+class Solution:
+    def numSubarrayProductLessThanK(self, nums: List[int], k: int) -> int:
+        left=0
+        c=0
+        p=1
+        for right in range(len(nums)):
+            p*=nums[right]
+            while p>=k:
+                p//=nums[left]
+                left+=1
+            c+=(right-left+1)
+        return c
 '''
