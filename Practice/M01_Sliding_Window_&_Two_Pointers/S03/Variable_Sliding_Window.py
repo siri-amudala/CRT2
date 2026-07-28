@@ -1,5 +1,5 @@
+
 #leetcode 209. Minimum Size Subarray Sum
-'''
 from typing import List
 def minSubArrayLen(target: int, nums: List[int]) -> int:
     left=0
@@ -17,17 +17,38 @@ target=7
 nums=[2,3,1,2,4,3]
 print(minSubArrayLen(target,nums))
 
+
+
 #leetcode question 713
-class Solution:
-    def numSubarrayProductLessThanK(self, nums: List[int], k: int) -> int:
-        left=0
-        c=0
-        p=1
-        for right in range(len(nums)):
-            p*=nums[right]
-            while p>=k:
-                p//=nums[left]
-                left+=1
-            c+=(right-left+1)
-        return c
-'''
+from typing import List
+def numSubarrayProductLessThanK(nums: List[int], k: int) -> int:
+    left=0
+    c=0
+    p=1
+    for right in range(len(nums)):
+        p*=nums[right]
+        while p>=k:
+            p//=nums[left]
+            left+=1
+        c+=(right-left+1)
+    return c
+
+    
+
+
+#904 fruit into baskets
+from typing import List
+def totalFruit(fruits: List[int]) -> int:
+    count={}
+    left,ans=0,0
+    for right in range(len(fruits)):
+        count[fruits[right]]=count.get(fruits[right],0)+1
+        while len(count) >2:
+            count[fruits[left]]-=1
+            if count[fruits[left]]==0:
+                del count[fruits[left]]
+            left+=1
+        ans=max(ans,right-left+1)
+    return ans
+
+
