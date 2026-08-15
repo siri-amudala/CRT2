@@ -19,6 +19,7 @@ print(minSubArrayLen(target,nums))
 
 
 
+
 #leetcode question 713
 from typing import List
 def numSubarrayProductLessThanK(nums: List[int], k: int) -> int:
@@ -32,8 +33,10 @@ def numSubarrayProductLessThanK(nums: List[int], k: int) -> int:
             left+=1
         c+=(right-left+1)
     return c
+nums=[10,5,2,6]
+k=100
+print(numSubarrayProductLessThanK(nums,k))
 
-    
 
 
 #904 fruit into baskets
@@ -50,5 +53,6 @@ def totalFruit(fruits: List[int]) -> int:
             left+=1
         ans=max(ans,right-left+1)
     return ans
-
+fruits=[1,2,1]
+print(totalFruit(fruits))
 
