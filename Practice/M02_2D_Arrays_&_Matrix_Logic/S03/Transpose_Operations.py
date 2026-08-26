@@ -3,7 +3,6 @@ from typing import List
 def transpose(matrix: List[List[int]]) -> List[List[int]]:
     m, n = len(matrix), len(matrix[0])
 
-    # Create an n x m result matrix initialized with zeros
     res = [[0] * m for _ in range(n)]
 
     for r in range(m):
