@@ -103,18 +103,10 @@ def traverse(head):
     print("None")
 
 head=None
-
 head=insert_begin(head,10)
 head=insert_begin(head,30)
-print("Insertion at the beginning:")
-traverse(head)
-
 head=insert_end(head,10)
-print("Insertion at the end:")
-traverse(head)
-
 head=instertion_after(head.next,15)
-print("Insertion after a node:")
 traverse(head)
 
 
